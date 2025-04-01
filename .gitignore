@@ -1,0 +1,5 @@
+//ignoro archivos exe, obj y tds
+*.exe
+*.obj
+*.tds
+
