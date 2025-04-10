@@ -13,6 +13,7 @@ typedef struct compu{
 void cargarEstructura(compu pcs[], int total, char tipos[][10]);
 void listarPCs(compu pcs[], int total);
 void mostrarMasVieja(compu pcs[], int total);
+void mostrarMasVeloz(compu pcs[], int total);
 
 
 int main(){
@@ -23,7 +24,7 @@ int main(){
     cargarEstructura(pcs,TOTAL,tipos);
     listarPCs(pcs, TOTAL);
     mostrarMasVieja(pcs, TOTAL);
-    
+    mostrarMasVeloz(pcs, TOTAL);
 
     return 0;
 }
@@ -55,4 +56,16 @@ void mostrarMasVieja(compu pcs[], int total){
         }
     }
     printf("La pc más antigua es la número %d con las siguientes especificaciones:\nVelocidad: %d\nAño: %d\nCantidad de nucleos: %d\nTipo de cpu: %s\n", j+1, pcs[j].velocidad, pcs[j].anio, pcs[j].cantidad_nucleos, pcs[j].tipo_cpu);
+}
+
+void mostrarMasVeloz(compu pcs[], int total){
+    int mayor, j=0;
+    mayor = pcs[0].velocidad;
+    for(int i=0; i<total; i++){
+        if(pcs[i].velocidad > mayor){
+            mayor = pcs[i].velocidad;
+            j=i;
+        }
+    }
+    printf("La pc más veloz es la número %d con las siguientes especificaciones:\nVelocidad: %d\nAño: %d\nCantidad de nucleos: %d\nTipo de cpu: %s\n", j+1, pcs[j].velocidad, pcs[j].anio, pcs[j].cantidad_nucleos, pcs[j].tipo_cpu);
 }
