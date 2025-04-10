@@ -12,6 +12,8 @@ typedef struct compu{
 
 void cargarEstructura(compu pcs[], int total, char tipos[][10]);
 void listarPCs(compu pcs[], int total);
+void mostrarMasVieja(compu pcs[], int total);
+
 
 int main(){
     srand(time(NULL));
@@ -20,6 +22,7 @@ int main(){
 
     cargarEstructura(pcs,TOTAL,tipos);
     listarPCs(pcs, TOTAL);
+    mostrarMasVieja(pcs, TOTAL);
     
 
     return 0;
@@ -40,4 +43,16 @@ void listarPCs(compu pcs[], int total){
         printf("%d)\nVelocidad: %d\nAño: %d\nCantidad de nucleos: %d\nTipo de cpu: %s\n", i+1, pcs[i].velocidad, pcs[i].anio, pcs[i].cantidad_nucleos, pcs[i].tipo_cpu);
         printf("\n");
     }
+}
+
+void mostrarMasVieja(compu pcs[], int total){
+    int menor, j=0;
+        menor = pcs[0].anio;
+    for(int i=0; i<total; i++){
+        if(pcs[i].anio < menor){
+            menor = pcs[i].anio;
+            j=i;
+        }
+    }
+    printf("La pc más antigua es la número %d con las siguientes especificaciones:\nVelocidad: %d\nAño: %d\nCantidad de nucleos: %d\nTipo de cpu: %s\n", j+1, pcs[j].velocidad, pcs[j].anio, pcs[j].cantidad_nucleos, pcs[j].tipo_cpu);
 }
