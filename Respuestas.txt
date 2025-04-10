@@ -1,0 +1,10 @@
+● ¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+    -No se puede ver el archivo tp2_1_2.c porque al no haber hecho un commit git no lo está tomando en la rama principal por lo que no lo muestra.
+    Esto pasa porque git solo muestra el historial de la rama principal main, y al haber hecho un cambio en otra rama que no sea main git no lo muestra.
+
+● En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+    -Puedo notar que las ramas se dividen, ahora el main sigue un camino por la creación del nuevo archivo y la opción dos se diferencia de la rama principal, desviándose, indicando
+    que ambas ramas son paralelas.
+
+● En VSCode vuelva al “Source Control” vea los cambios, ¿Qué nota?
+    -Ahora ambas ramas se vuelven a fucionar en un punto en común.
